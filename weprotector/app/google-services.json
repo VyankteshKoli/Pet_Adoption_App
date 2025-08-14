@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028916997508",
+    "project_id": "weprotector",
+    "storage_bucket": "weprotector.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028916997508:android:da1bb1591856a5d5c901d1",
+        "android_client_info": {
+          "package_name": "com.example.weprotector"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACOE81dcBM0BxoVfYlIjGXPXvPcA5Jtn4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

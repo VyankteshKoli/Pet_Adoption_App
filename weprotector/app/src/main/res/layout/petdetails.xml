@@ -1,0 +1,232 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DEDEDE"
+        android:layout_margin="16dp"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/pet_image"
+            android:layout_width="295dp"
+            android:layout_height="149dp"
+            android:src="@drawable/dog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/pet_name"
+            android:layout_width="316dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="24dp"
+            android:text="Pet Name: Buddy"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pet_image" />
+
+        <TextView
+            android:id="@+id/pet_breed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="4dp"
+            android:textColor="#000"
+            android:text="Pet Breed: Golden Retriever"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_name" />
+
+        <TextView
+            android:id="@+id/pet_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:text="Age: 2 Years Old"
+            android:textStyle="bold"
+            android:textColor="#777777"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pet_breed" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="16dp"
+            android:text="
+Vaccinated: Yes\n
+Sterilization: Yes\n
+Size: Medium"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pet_age" />
+
+        <TextView
+            android:id="@+id/pet_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center_horizontal"
+            android:textColor="#000"
+            android:text=" is a peace-loving doggie! He is a pleasant guy to be around and is happy to humor anyone who wants to pet him."
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/adopt_me"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_textview"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:text="Adopt Me"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pet_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:layout_margin="16dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/adopt_me2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Adopt Me"
+            android:textColor="#F74F22"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <ImageView
+            android:id="@+id/footprint1"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/dogfootprint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adopt_me2" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="14dp"
+            android:gravity="center_horizontal"
+            android:text="Friendly with other Dogs"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/footprint1"
+            app:layout_constraintTop_toBottomOf="@+id/adopt_me2" />
+
+
+        <ImageView
+            android:id="@+id/footprint2"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="23dp"
+            android:src="@drawable/dogfootprint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/footprint1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Good for Apartments"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/footprint1"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <ImageView
+            android:id="@+id/footprint3"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/dogfootprint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/footprint2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Friendly with Kids"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/footprint2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <ImageView
+            android:id="@+id/footprint4"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/dogfootprint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/footprint3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="Easy To Train"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/footprint3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>
