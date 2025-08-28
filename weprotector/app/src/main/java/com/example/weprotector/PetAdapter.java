@@ -1,5 +1,8 @@
 package com.example.weprotector;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +12,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
 
-    private List<PetAdapterModel> petList;
+    private List<AddPetAdmin> petList;
     private OnItemClickListener onItemClickListener;
 
-    public PetAdapter(List<PetAdapterModel> petList, OnItemClickListener onItemClickListener) {
+    public PetAdapter(List<AddPetAdmin> petList, OnItemClickListener listener) {
         this.petList = petList;
-        this.onItemClickListener = onItemClickListener;
+        this.onItemClickListener = listener;
     }
 
     @NonNull
@@ -30,11 +35,34 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PetViewHolder holder, int position) {
-        PetAdapterModel pet = petList.get(position);
-        holder.petImage.setImageResource(pet.getImageResourceId());
+        AddPetAdmin pet = petList.get(position);
+
         holder.petName.setText(pet.getName());
         holder.petBreed.setText(pet.getBreed());
-        holder.petAge.setText(String.format("%d years old", pet.getAge()));
+        holder.petAge.setText(pet.getAge() + " years old");
+
+        String imageUrl = pet.getImageUrl();
+
+        if (imageUrl != null) {
+            if (imageUrl.startsWith("http")) {
+                // Load URL from Firebase using Glide
+                Glide.with(holder.petImage.getContext())
+                        .load(imageUrl)
+                        .placeholder(R.drawable.dog)
+                        .into(holder.petImage);
+            } else {
+                // Decode Base64 string
+                try {
+                    byte[] imageBytes = Base64.decode(imageUrl, Base64.DEFAULT);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+                    holder.petImage.setImageBitmap(bitmap);
+                } catch (Exception e) {
+                    holder.petImage.setImageResource(R.drawable.dog);
+                }
+            }
+        } else {
+            holder.petImage.setImageResource(R.drawable.dog);
+        }
 
         holder.itemView.setOnClickListener(v -> onItemClickListener.onItemClick(pet));
     }
@@ -43,6 +71,7 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
     public int getItemCount() {
         return petList.size();
     }
+
     public static class PetViewHolder extends RecyclerView.ViewHolder {
         ImageView petImage;
         TextView petName, petBreed, petAge;
@@ -57,6 +86,6 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(PetAdapterModel pet);
+        void onItemClick(AddPetAdmin pet);
     }
 }

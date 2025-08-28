@@ -62,21 +62,48 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pet_breed" />
 
+
+
+
+
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/pet_vaccinated"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="#000"
             android:layout_marginStart="23dp"
             android:layout_marginTop="16dp"
-            android:text="
-Vaccinated: Yes\n
-Sterilization: Yes\n
-Size: Medium"
+            android:text="Vaccinated: Yes"
             android:textStyle="bold"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pet_age" />
+
+        <TextView
+            android:id="@+id/pet_sterilization"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="16dp"
+            android:text="Vaccinated: Yes"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pet_vaccinated" />
+
+        <TextView
+            android:id="@+id/pet_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="16dp"
+            android:text="Vaccinated: Yes"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pet_sterilization" />
 
         <TextView
             android:id="@+id/pet_description"
@@ -87,7 +114,7 @@ Size: Medium"
             android:textColor="#000"
             android:text=" is a peace-loving doggie! He is a pleasant guy to be around and is happy to humor anyone who wants to pet him."
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/pet_size"
             tools:layout_editor_absoluteX="16dp" />
 
         <TextView

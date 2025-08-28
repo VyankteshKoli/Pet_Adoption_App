@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,7 +30,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SignupPage extends AppCompatActivity {
-
     EditText name, phoneno, emailid, password, confirmpassword;
     TextView loginBtn, signupBtn;
     ProgressBar progressbar;

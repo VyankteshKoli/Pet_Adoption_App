@@ -21,14 +21,9 @@ import java.util.Map;
 public class Paybill extends AppCompatActivity {
 
     TextView infoText, nameTextView, emailTextView, phoneTextView, addressTextView;
-    TextView dognameis, dogbreedis;
+    TextView dognameis, dogbreedis, dogvacinatedis, dogageis, dogserialization;
     CheckBox agree_condition;
     Button submit;
-
-    // Firebase reference
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference petsRef = database.getReference("pets");
-    DatabaseReference adoptersRef = database.getReference("adopters");
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,18 +36,28 @@ public class Paybill extends AppCompatActivity {
 
         dognameis = findViewById(R.id.nameis);
         dogbreedis = findViewById(R.id.breedis);
+        dogvacinatedis = findViewById(R.id.vaccinatedis);
+        dogageis = findViewById(R.id.ageis);
+        dogserialization = findViewById(R.id.serializationis);
 
         nameTextView = findViewById(R.id.name);
         emailTextView = findViewById(R.id.email);
         phoneTextView = findViewById(R.id.phone);
         addressTextView = findViewById(R.id.address);
 
-        // Get Pet Info from Intent
         String dogName = getIntent().getStringExtra("dogname");
         String dogBreed = getIntent().getStringExtra("dogbreed");
+        String dogVaccinated = getIntent().getStringExtra("dogvaccinated");
+        String dogAge = getIntent().getStringExtra("dogage");
+        String dogSerial = getIntent().getStringExtra("dogserialization"); // Correct key
 
-        dognameis.setText("Dog Name: " + dogName);
-        dogbreedis.setText("Breed: " + dogBreed);
+
+        // Set Pet info
+        dognameis.setText("Dog Name: " + (dogName != null ? dogName : "N/A"));
+        dogbreedis.setText("Breed: " + (dogBreed != null ? dogBreed : "N/A"));
+        dogvacinatedis.setText("Vaccinated: " + (dogVaccinated != null ? dogVaccinated : "N/A"));
+        dogageis.setText("Age: " + (dogAge != null ? dogAge : "N/A"));
+        dogserialization.setText("Serialization: " + (dogSerial != null ? dogSerial : "N/A"));
 
         // Get Adopter Info from Intent
         String name = getIntent().getStringExtra("name");
@@ -60,29 +65,19 @@ public class Paybill extends AppCompatActivity {
         String phone = getIntent().getStringExtra("phone");
         String address = getIntent().getStringExtra("address");
 
+
         nameTextView.setText("Adopter Name: " + name);
         emailTextView.setText("Email ID: " + email);
         phoneTextView.setText("Contact No: " + phone);
         addressTextView.setText("Address: " + address);
-
-
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (agree_condition.isChecked()) {
 
-                    // Get the reference to Firebase
                     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("adoptions");
                     String adoptionId = dbRef.push().getKey();
-
-                    // Extract the data from the intent
-                    String name = getIntent().getStringExtra("name");
-                    String email = getIntent().getStringExtra("email");
-                    String phone = getIntent().getStringExtra("phone");
-                    String address = getIntent().getStringExtra("address");
-                    String dogName = getIntent().getStringExtra("dogname");
-                    String dogBreed = getIntent().getStringExtra("dogbreed");
 
                     // Create adopter info map
                     Map<String, Object> adopterInfo = new HashMap<>();
@@ -91,13 +86,16 @@ public class Paybill extends AppCompatActivity {
                     adopterInfo.put("phone", phone);
                     adopterInfo.put("address", address);
 
-                    // Create pet info map
+                    // Create pet info map using passed info
                     Map<String, Object> petInfo = new HashMap<>();
                     petInfo.put("dogName", dogName);
                     petInfo.put("breed", dogBreed);
-                    petInfo.put("age", "2 years");
+                    petInfo.put("vaccinated", dogVaccinated);
+                    petInfo.put("age", dogAge);
+                    petInfo.put("serialization", dogSerial);
 
-                    // Combine adopter and pet info into one map
+
+                    // Combine adopter and pet info
                     Map<String, Object> adoptionData = new HashMap<>();
                     adoptionData.put("adopterInfo", adopterInfo);
                     adoptionData.put("petInfo", petInfo);
@@ -108,9 +106,8 @@ public class Paybill extends AppCompatActivity {
 
                                     new AlertDialog.Builder(Paybill.this)
                                             .setTitle("Thank You!")
-                                            .setMessage("Your's Form Submitted Successfully.\nOur Team Will Reach You Out Soon..")
+                                            .setMessage("Your Form Submitted Successfully.\nOur Team Will Reach You Soon..")
                                             .setPositiveButton("OK", (dialog, which) -> {
-
                                                 Intent intent = new Intent(Paybill.this, HomePage.class);
                                                 startActivity(intent);
                                                 finish();
@@ -119,18 +116,15 @@ public class Paybill extends AppCompatActivity {
                                             .show();
                                 })
                                 .addOnFailureListener(e -> {
-
                                     Toast.makeText(Paybill.this, "Failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                                 });
                     }
 
                 } else {
-
-                    Toast.makeText(Paybill.this, "Please agree Terms &amp; Condition", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Paybill.this, "Please agree Terms & Condition", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
 
     }
 }
