@@ -55,7 +55,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:text="Adopting abandoned and rescued dogs from animal rescue shelters creates a culture of sympathy for street animals. It also fosters acceptance and appreciation towards our indigenous Indian breed dogs." />
+                android:text="Adopting abandoned and Rescued dogs from animal rescue shelters creates a culture of sympathy for street Animals. It also fosters acceptance and appreciation towards our indigenous Indian breed dogs." />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
