@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,12 +16,12 @@ public class TwoOptions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twooptions);
 
-        TextView l1,l2;
+        ImageView user,admin;
 
-        l1 = findViewById(R.id.l1);
-        l2 = findViewById(R.id.l2);
+        user = findViewById(R.id.user);
+        admin = findViewById(R.id.admin);
 
-        l1.setOnClickListener(new View.OnClickListener() {
+        user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -30,8 +30,7 @@ public class TwoOptions extends AppCompatActivity {
             }
         });
 
-
-        l2.setOnClickListener(new View.OnClickListener() {
+        admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -39,6 +38,7 @@ public class TwoOptions extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 }
