@@ -31,7 +31,7 @@
             android:name=".AdminLoginPage"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".TwoOptions"
             android:exported="false" />
         <activity
             android:name=".LogoutPage"
@@ -82,7 +82,7 @@
             android:name=".HowtoHelp"
             android:exported="false" />
         <activity
-            android:name=".TwoOptions"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
