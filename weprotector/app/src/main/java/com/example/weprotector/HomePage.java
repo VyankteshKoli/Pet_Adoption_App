@@ -75,18 +75,11 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-//        if (id == R.id.nav_aboutus) {
-//            startActivity(new Intent(this, AboutUs.class));
-//        } else
-            if (id == R.id.nav_adoptpet) {
-            startActivity(new Intent(this, AdoptPet.class));
+          if (id == R.id.nav_adoptpet) {
+          startActivity(new Intent(this, AdoptPet.class));
         } else if (id == R.id.nav_petaccessories) {
             startActivity(new Intent(this, PetAccessories.class));
-        }
-//            else if (id == R.id.nav_howtohelp) {
-//            startActivity(new Intent(this, HowtoHelp.class));
-//        }
-            else if (id == R.id.nav_logout) {
+        } else if (id == R.id.nav_logout) {
             startActivity(new Intent(this, LogoutPage.class));
         }
 
