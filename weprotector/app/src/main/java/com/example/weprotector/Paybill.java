@@ -49,17 +49,15 @@ public class Paybill extends AppCompatActivity {
         String dogBreed = getIntent().getStringExtra("dogbreed");
         String dogVaccinated = getIntent().getStringExtra("dogvaccinated");
         String dogAge = getIntent().getStringExtra("dogage");
-        String dogSerial = getIntent().getStringExtra("dogserialization"); // Correct key
+        String dogSerial = getIntent().getStringExtra("dogserialization"); 
 
 
-        // Set Pet info
         dognameis.setText("Dog Name: " + (dogName != null ? dogName : "N/A"));
         dogbreedis.setText("Breed: " + (dogBreed != null ? dogBreed : "N/A"));
         dogvacinatedis.setText("Vaccinated: " + (dogVaccinated != null ? dogVaccinated : "N/A"));
         dogageis.setText("Age: " + (dogAge != null ? dogAge : "N/A"));
         dogserialization.setText("Serialization: " + (dogSerial != null ? dogSerial : "N/A"));
 
-        // Get Adopter Info from Intent
         String name = getIntent().getStringExtra("name");
         String email = getIntent().getStringExtra("email");
         String phone = getIntent().getStringExtra("phone");
@@ -79,14 +77,12 @@ public class Paybill extends AppCompatActivity {
                     DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("adoptions");
                     String adoptionId = dbRef.push().getKey();
 
-                    // Create adopter info map
                     Map<String, Object> adopterInfo = new HashMap<>();
                     adopterInfo.put("name", name);
                     adopterInfo.put("email", email);
                     adopterInfo.put("phone", phone);
                     adopterInfo.put("address", address);
 
-                    // Create pet info map using passed info
                     Map<String, Object> petInfo = new HashMap<>();
                     petInfo.put("dogName", dogName);
                     petInfo.put("breed", dogBreed);
@@ -94,8 +90,6 @@ public class Paybill extends AppCompatActivity {
                     petInfo.put("age", dogAge);
                     petInfo.put("serialization", dogSerial);
 
-
-                    // Combine adopter and pet info
                     Map<String, Object> adoptionData = new HashMap<>();
                     adoptionData.put("adopterInfo", adopterInfo);
                     adoptionData.put("petInfo", petInfo);
