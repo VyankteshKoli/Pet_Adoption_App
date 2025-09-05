@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1028916997508",
+    "firebase_url": "https://weprotector-default-rtdb.firebaseio.com",
     "project_id": "weprotector",
     "storage_bucket": "weprotector.firebasestorage.app"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.weprotector"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1028916997508-5dqp56tn78d5gjm1h33obc70ca4gekip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weprotector",
+            "certificate_hash": "43a375783a888e126ec8b683ea089140dd815545"
+          }
+        },
+        {
+          "client_id": "1028916997508-a3att5sopu184d7s7guqul8niejh2m4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyACOE81dcBM0BxoVfYlIjGXPXvPcA5Jtn4"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028916997508-a3att5sopu184d7s7guqul8niejh2m4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
