@@ -46,18 +46,6 @@
             android:name=".HomePage"
             android:exported="false" />
         <activity
-            android:name=".DogBodyWash"
-            android:exported="false" />
-        <activity
-            android:name=".DogFood"
-            android:exported="false" />
-        <activity
-            android:name=".DogShelter"
-            android:exported="false" />
-        <activity
-            android:name=".DogCollars"
-            android:exported="false" />
-        <activity
             android:name=".SignupPage"
             android:exported="false" />
         <activity
@@ -65,9 +53,6 @@
             android:exported="false" />
         <activity
             android:name=".Paybill"
-            android:exported="false" />
-        <activity
-            android:name=".PetAccessories"
             android:exported="false" />
         <activity
             android:name=".Adoption_Form"
