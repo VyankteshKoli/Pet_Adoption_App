@@ -58,11 +58,17 @@ public class AdminHomepage extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
+//        if (id == R.id.nav_aboutus) {
+//            startActivity(new Intent(this, AboutUs.class));
+//        } else
         if (id == R.id.nav_home) {
             startActivity(new Intent(this, AdminHomepage.class));
         } else if (id == R.id.nav_adoptionrequest) {
             startActivity(new Intent(this, AdoptionRequestAdmin.class));
         }
+//            else if (id == R.id.nav_howtohelp) {
+//            startActivity(new Intent(this, HowtoHelp.class));
+//        }
         else if (id == R.id.nav_logout) {
             startActivity(new Intent(this, LogoutPage.class));
         }

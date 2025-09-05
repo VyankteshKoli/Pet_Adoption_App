@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <!-- Pet Info -->
+    <TextView
+        android:id="@+id/tvPetName"
+        android:text="Pet: Buddy"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tvBreed"
+        android:text="Breed: Labrador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:text="Age: 2 years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Adopter Info -->
+    <TextView
+        android:id="@+id/tvAdopterName"
+        android:text="Adopter: John Doe"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/tvAdopterPhone"
+        android:text="Phone: 9876543210"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/tvAdopterEmail"
+        android:text="Email: john@example.com"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:text="Status: Pending"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btnAccept"
+            android:text="Accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnReject"
+            android:text="Reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+</LinearLayout>

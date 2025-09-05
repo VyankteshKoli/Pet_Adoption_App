@@ -16,6 +16,12 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp"/>
 
+<!--        <item-->
+<!--            android:id="@+id/nav_aboutus"-->
+<!--            android:title="About us"-->
+<!--            android:paddingStart="16dp"-->
+<!--            android:paddingEnd="16dp"/>-->
+
         <item
             android:id="@+id/nav_adoptpet"
             android:title="Adopt a Pet"
@@ -23,8 +29,8 @@
             android:paddingEnd="16dp"/>
 
         <item
-            android:id="@+id/nav_petaccessories"
-            android:title="Acessories"
+            android:id="@+id/nav_petconfotmation"
+            android:title="Pet Conformation"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"/>
 

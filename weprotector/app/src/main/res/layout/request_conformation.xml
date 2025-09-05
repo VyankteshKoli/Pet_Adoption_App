@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvCongrats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Congratulations!"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#4CAF50"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvAccepted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your adoption request has been accepted."
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="18dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/bgpetcard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp">
+
+            <ImageView
+                android:id="@+id/ivPetImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:src="@drawable/dog"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Pet Image"/>
+
+            <TextView
+                android:id="@+id/tvPetName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pet Name: Babyy"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvPetBreed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breed: Hotti"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tvPetAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age: 3"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAdminContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact admin for pickup: 123-456-7890"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>

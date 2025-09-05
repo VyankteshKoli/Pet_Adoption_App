@@ -45,24 +45,28 @@ public class Paybill extends AppCompatActivity {
         phoneTextView = findViewById(R.id.phone);
         addressTextView = findViewById(R.id.address);
 
+        // Get Pet info from intent
         String dogName = getIntent().getStringExtra("dogname");
         String dogBreed = getIntent().getStringExtra("dogbreed");
         String dogVaccinated = getIntent().getStringExtra("dogvaccinated");
         String dogAge = getIntent().getStringExtra("dogage");
-        String dogSerial = getIntent().getStringExtra("dogserialization"); 
+        String dogSerial = getIntent().getStringExtra("dogserialization");
 
+        // ✅ Get adminId from intent (important!)
+        String adminId = getIntent().getStringExtra("adminId");
 
+        // Set Pet info
         dognameis.setText("Dog Name: " + (dogName != null ? dogName : "N/A"));
         dogbreedis.setText("Breed: " + (dogBreed != null ? dogBreed : "N/A"));
         dogvacinatedis.setText("Vaccinated: " + (dogVaccinated != null ? dogVaccinated : "N/A"));
         dogageis.setText("Age: " + (dogAge != null ? dogAge : "N/A"));
         dogserialization.setText("Serialization: " + (dogSerial != null ? dogSerial : "N/A"));
 
+        // Get Adopter Info from Intent
         String name = getIntent().getStringExtra("name");
         String email = getIntent().getStringExtra("email");
         String phone = getIntent().getStringExtra("phone");
         String address = getIntent().getStringExtra("address");
-
 
         nameTextView.setText("Adopter Name: " + name);
         emailTextView.setText("Email ID: " + email);
@@ -74,15 +78,17 @@ public class Paybill extends AppCompatActivity {
             public void onClick(View view) {
                 if (agree_condition.isChecked()) {
 
-                    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("adoptions");
-                    String adoptionId = dbRef.push().getKey();
+                    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("adoptionRequests");
+                    String requestId = dbRef.push().getKey();
 
+                    // Create adopter info map
                     Map<String, Object> adopterInfo = new HashMap<>();
                     adopterInfo.put("name", name);
                     adopterInfo.put("email", email);
                     adopterInfo.put("phone", phone);
                     adopterInfo.put("address", address);
 
+                    // Create pet info map
                     Map<String, Object> petInfo = new HashMap<>();
                     petInfo.put("dogName", dogName);
                     petInfo.put("breed", dogBreed);
@@ -90,17 +96,20 @@ public class Paybill extends AppCompatActivity {
                     petInfo.put("age", dogAge);
                     petInfo.put("serialization", dogSerial);
 
-                    Map<String, Object> adoptionData = new HashMap<>();
-                    adoptionData.put("adopterInfo", adopterInfo);
-                    adoptionData.put("petInfo", petInfo);
+                    // ✅ Add status + adminId
+                    Map<String, Object> requestData = new HashMap<>();
+                    requestData.put("adopterInfo", adopterInfo);
+                    requestData.put("petInfo", petInfo);
+                    requestData.put("status", "pending");
+                    requestData.put("adminId", adminId);  // <-- now safe, coming from intent
+                    requestData.put("timestamp", System.currentTimeMillis());
 
-                    if (adoptionId != null) {
-                        dbRef.child(adoptionId).setValue(adoptionData)
+                    if (requestId != null) {
+                        dbRef.child(requestId).setValue(requestData)
                                 .addOnSuccessListener(aVoid -> {
-
                                     new AlertDialog.Builder(Paybill.this)
                                             .setTitle("Thank You!")
-                                            .setMessage("Your Form Submitted Successfully.\nOur Team Will Reach You Soon..")
+                                            .setMessage("Your Request Submitted Successfully.\nAdmin Will Review Soon..")
                                             .setPositiveButton("OK", (dialog, which) -> {
                                                 Intent intent = new Intent(Paybill.this, HomePage.class);
                                                 startActivity(intent);
@@ -119,6 +128,5 @@ public class Paybill extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
