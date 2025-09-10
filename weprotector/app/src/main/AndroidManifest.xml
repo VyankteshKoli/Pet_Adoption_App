@@ -25,6 +25,15 @@
             android:name=".AddPet"
             android:exported="false" />
         <activity
+            android:name=".AdoptPet"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUs"
+            android:exported="false" />
+        <activity
+            android:name=".HowtoHelp"
+            android:exported="false" />
+        <activity
             android:name=".AdminHomepage"
             android:exported="false" />
         <activity
@@ -59,15 +68,6 @@
             android:exported="false" />
         <activity
             android:name=".PetDetails"
-            android:exported="false" />
-        <activity
-            android:name=".AdoptPet"
-            android:exported="false" />
-        <activity
-            android:name=".AboutUs"
-            android:exported="false" />
-        <activity
-            android:name=".HowtoHelp"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
