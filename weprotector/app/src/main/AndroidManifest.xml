@@ -28,9 +28,6 @@
             android:name=".AdoptPet"
             android:exported="false" />
         <activity
-            android:name=".AboutUs"
-            android:exported="false" />
-        <activity
             android:name=".HowtoHelp"
             android:exported="false" />
         <activity
