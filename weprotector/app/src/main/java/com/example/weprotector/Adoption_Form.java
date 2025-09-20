@@ -69,16 +69,12 @@ public class Adoption_Form extends AppCompatActivity {
                 }
             }
 
-
-            // Get dog info from previous intent
             String dogName = getIntent().getStringExtra("dogname");
             String dogBreed = getIntent().getStringExtra("dogbreed");
             String dogVaccinated = getIntent().getStringExtra("dogvaccinated");
             String dogAge = getIntent().getStringExtra("dogage");
             String dogSerial = getIntent().getStringExtra("dogserialization");
 
-
-            // Pass all dog info to Adoption_Fees
             Intent intent = new Intent(Adoption_Form.this, Adoption_Fees.class);
             intent.putExtra("dogname", dogName);
             intent.putExtra("dogbreed", dogBreed);
