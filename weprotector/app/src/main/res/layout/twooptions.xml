@@ -1,58 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:padding="20dp"
     tools:context=".TwoOptions">
 
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/userLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/option_bg"
+        android:layout_marginBottom="24dp">
 
-    <ImageView
-        android:id="@+id/user"
-        android:layout_width="330dp"
-        android:layout_height="178dp"
-        android:layout_gravity="center"
-        android:src="@drawable/user"/>
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="180dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:text="Login as User"/>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login as User"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
 
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/adminLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <ImageView
-        android:id="@+id/admin"
-        android:layout_width="350dp"
-        android:layout_height="183dp"
-        android:layout_gravity="center"
-        android:src="@drawable/useradmin" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/option_bg">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:text="Login as Admin"/>
+        <ImageView
+            android:id="@+id/admin"
+            android:layout_width="180dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/useradmin" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login as Admin"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
+
 </LinearLayout>
