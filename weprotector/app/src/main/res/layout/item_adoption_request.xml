@@ -7,10 +7,10 @@
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-    <!-- Pet Info -->
     <TextView
         android:id="@+id/tvPetName"
         android:text="Pet: Buddy"
+        android:textColor="#000"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
@@ -20,6 +20,7 @@
     <TextView
         android:id="@+id/tvBreed"
         android:text="Breed: Labrador"
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"/>
@@ -27,14 +28,15 @@
     <TextView
         android:id="@+id/tvAge"
         android:text="Age: 2 years"
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Adopter Info -->
     <TextView
         android:id="@+id/tvAdopterName"
         android:text="Adopter: John Doe"
+        android:textColor="#000"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
     <TextView
         android:id="@+id/tvAdopterPhone"
         android:text="Phone: 9876543210"
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"/>
@@ -50,20 +53,20 @@
     <TextView
         android:id="@+id/tvAdopterEmail"
         android:text="Email: john@example.com"
+        android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Status -->
     <TextView
         android:id="@+id/tvStatus"
         android:text="Status: Pending"
+        android:textColor="#000"
         android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"/>
 
-    <!-- Buttons -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -73,12 +76,14 @@
         <Button
             android:id="@+id/btnAccept"
             android:text="Accept"
+            android:textColor="#fff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btnReject"
             android:text="Reject"
+            android:textColor="#fff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"/>

@@ -23,7 +23,6 @@ public class PetDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.petdetails);
 
-        // Initialize views
         petName = findViewById(R.id.pet_name);
         petBreed = findViewById(R.id.pet_breed);
         petAge = findViewById(R.id.pet_age);
@@ -35,7 +34,6 @@ public class PetDetails extends AppCompatActivity {
         petSterilization = findViewById(R.id.pet_sterilization);
         petSize = findViewById(R.id.pet_size);
 
-        // Get AddPetAdmin object from Intent
         AddPetAdmin pet = (AddPetAdmin) getIntent().getSerializableExtra("pet");
 
         if (pet != null) {
@@ -51,13 +49,13 @@ public class PetDetails extends AppCompatActivity {
 
             if (imageUrl != null) {
                 if (imageUrl.startsWith("http")) {
-                    // Load image from Firebase Storage URL
+                    
                     Glide.with(this)
                             .load(imageUrl)
                             .placeholder(R.drawable.dog)
                             .into(petImage);
                 } else {
-                    // Decode Base64 string
+                    
                     try {
                         byte[] imageBytes = Base64.decode(imageUrl, Base64.DEFAULT);
                         Bitmap bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
@@ -70,7 +68,6 @@ public class PetDetails extends AppCompatActivity {
                 petImage.setImageResource(R.drawable.dog);
             }
 
-            // Set adopt buttons text
             String adoptText = "Adopt " + pet.getName();
             adoptme.setText(adoptText);
             adoptme2.setText(adoptText);

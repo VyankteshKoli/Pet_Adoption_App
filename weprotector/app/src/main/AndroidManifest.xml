@@ -16,9 +16,6 @@
             android:name=".RequestConformation"
             android:exported="false" />
         <activity
-            android:name=".AdoptionRequestPage"
-            android:exported="false" />
-        <activity
             android:name=".AddPetAdmin"
             android:exported="false" />
         <activity
@@ -26,6 +23,12 @@
             android:exported="false" />
         <activity
             android:name=".AddPet"
+            android:exported="false" />
+        <activity
+            android:name=".AdoptPet"
+            android:exported="false" />
+        <activity
+            android:name=".HowtoHelp"
             android:exported="false" />
         <activity
             android:name=".AdminHomepage"
@@ -37,25 +40,13 @@
             android:name=".AdminLoginPage"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".TwoOptions"
             android:exported="false" />
         <activity
             android:name=".LogoutPage"
             android:exported="false" />
         <activity
             android:name=".HomePage"
-            android:exported="false" />
-        <activity
-            android:name=".DogBodyWash"
-            android:exported="false" />
-        <activity
-            android:name=".DogFood"
-            android:exported="false" />
-        <activity
-            android:name=".DogShelter"
-            android:exported="false" />
-        <activity
-            android:name=".DogCollars"
             android:exported="false" />
         <activity
             android:name=".SignupPage"
@@ -67,9 +58,6 @@
             android:name=".Paybill"
             android:exported="false" />
         <activity
-            android:name=".PetAccessories"
-            android:exported="false" />
-        <activity
             android:name=".Adoption_Form"
             android:exported="false" />
         <activity
@@ -79,20 +67,10 @@
             android:name=".PetDetails"
             android:exported="false" />
         <activity
-            android:name=".AdoptPet"
-            android:exported="false" />
-        <activity
-            android:name=".AboutUs"
-            android:exported="false" />
-        <activity
-            android:name=".HowtoHelp"
-            android:exported="false" />
-        <activity
-            android:name=".TwoOptions"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

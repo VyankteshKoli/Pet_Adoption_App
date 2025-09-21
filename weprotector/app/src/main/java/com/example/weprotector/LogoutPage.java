@@ -61,7 +61,7 @@ public class LogoutPage extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle toolbar item clicks
+      
         if (item.getItemId() == android.R.id.home) {
 
             startActivity(new Intent(this, HomePage.class));

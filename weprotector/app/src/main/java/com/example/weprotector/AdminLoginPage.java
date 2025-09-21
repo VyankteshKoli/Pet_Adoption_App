@@ -65,7 +65,7 @@ public class AdminLoginPage extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 FirebaseUser firebaseUser = mAuth.getCurrentUser();
                                 if (firebaseUser != null) {
-                                    // ✅ Check if this user is really an Admin
+                                    // Check if this user is really an Admin
                                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Admins");
                                     ref.child(firebaseUser.getUid()).get().addOnCompleteListener(task1 -> {
                                         if (task1.isSuccessful()) {
