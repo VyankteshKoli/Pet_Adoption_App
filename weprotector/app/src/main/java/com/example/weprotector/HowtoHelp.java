@@ -21,10 +21,6 @@ public class HowtoHelp extends AppCompatActivity {
             public void onClick(View v) {
                 
                 Toast.makeText(HowtoHelp.this, "Thank you for your interest!", Toast.LENGTH_SHORT).show();
-
-                // OR navigate to another activity (uncomment if you have another Activity)
-                // Intent intent = new Intent(HowtoHelp.this, AnotherActivity.class);
-                // startActivity(intent);
             }
         });
     }
