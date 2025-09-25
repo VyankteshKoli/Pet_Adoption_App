@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="15dp"
     android:background="@android:color/white"
     tools:context=".HowtoHelp">
 
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="22dp"/>
 
     <TextView
         android:id="@+id/helpDescription"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@id/helpTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="15dp"/>
 
     <Button
         android:id="@+id/helpButton"
@@ -46,6 +46,6 @@
         app:layout_constraintTop_toBottomOf="@id/helpDescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="22dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
