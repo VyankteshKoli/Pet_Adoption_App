@@ -7,10 +7,10 @@ public class PetAdapterModel implements Serializable {
     private String name;
     private String breed;
     private int age;
-    private String imageBase64; // Base64 image string
+    private String imageBase64; 
 
     public PetAdapterModel() {
-        // Empty constructor required for Firebase if needed
+        
     }
 
     public PetAdapterModel(String name, String breed, int age, String imageBase64) {
@@ -20,7 +20,6 @@ public class PetAdapterModel implements Serializable {
         this.imageBase64 = imageBase64;
     }
 
-    // Getters
     public String getName() {
         return name;
     }
@@ -37,7 +36,6 @@ public class PetAdapterModel implements Serializable {
         return imageBase64;
     }
 
-    // Setters
     public void setName(String name) {
         this.name = name;
     }
