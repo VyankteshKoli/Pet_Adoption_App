@@ -43,12 +43,10 @@ public class AddPet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_pet);
 
-        // Initialize Firebase
         authProfile = FirebaseAuth.getInstance();
         firebaseUser = authProfile.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference("Pets");
 
-        // Initialize views
         etPetName = findViewById(R.id.etPetName);
         etPetBreed = findViewById(R.id.etPetBreed);
         etPetAge = findViewById(R.id.etPetAge);
@@ -59,13 +57,11 @@ public class AddPet extends AppCompatActivity {
         btnSavePet = findViewById(R.id.btnSavePet);
         profileimage = findViewById(R.id.profileimage);
 
-        // Initialize ProgressDialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Saving Pet");
         progressDialog.setMessage("Please wait...");
         progressDialog.setCancelable(false);
 
-        // Click to pick image
         profileimage.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setType("image/*");
@@ -73,7 +69,6 @@ public class AddPet extends AppCompatActivity {
             startActivityForResult(Intent.createChooser(intent, "Select Pet Image"), PICK_IMAGE_REQUEST);
         });
 
-        // Save pet click
         btnSavePet.setOnClickListener(v -> savePet());
     }
 
@@ -88,7 +83,7 @@ public class AddPet extends AppCompatActivity {
     }
 
     private void savePet() {
-        // Get input values
+        
         String name = etPetName.getText().toString().trim();
         String breed = etPetBreed.getText().toString().trim();
         String ageStr = etPetAge.getText().toString().trim();
@@ -97,7 +92,6 @@ public class AddPet extends AppCompatActivity {
         String size = etPetSize.getText().toString().trim();
         String description = etPetDescription.getText().toString().trim();
 
-        // Validation
         if (name.isEmpty() || breed.isEmpty() || ageStr.isEmpty() || vaccination.isEmpty() ||
                 sterilization.isEmpty() || size.isEmpty() || description.isEmpty()) {
             Toast.makeText(this, "Please fill all details", Toast.LENGTH_SHORT).show();
@@ -117,29 +111,23 @@ public class AddPet extends AppCompatActivity {
             return;
         }
 
-        // Generate unique pet ID
         String petId = databaseReference.push().getKey();
         if (petId == null) {
             Toast.makeText(this, "Error generating Pet ID", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        // Encode image to Base64
         String imageBase64 = encodeImageToBase64(imageUri);
         if (imageBase64 == null) {
             Toast.makeText(this, "Failed to encode image", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Show progress
         progressDialog.show();
 
-        // Create pet object
         AddPetAdmin pet = new AddPetAdmin(
                 petId, name, breed, age, vaccination, sterilization, size, description, imageBase64
         );
 
-        // Save to Firebase Database
         databaseReference.child(petId).setValue(pet)
                 .addOnSuccessListener(aVoid -> {
                     progressDialog.dismiss();
