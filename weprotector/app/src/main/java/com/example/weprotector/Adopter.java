@@ -7,7 +7,7 @@ public class Adopter {
     public String address;
 
     public Adopter() {
-
+        
     }
 
     public Adopter(String name, String email, String phone, String address) {
