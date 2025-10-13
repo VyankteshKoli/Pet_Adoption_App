@@ -109,7 +109,7 @@ public class RequestConformation extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                    public void onCancelled(@NonNull DatabaseError error){
                         ivPetImage.setImageResource(R.drawable.dog);
                     }
                 });

@@ -25,12 +25,6 @@
             android:name=".AddPet"
             android:exported="false" />
         <activity
-            android:name=".AdoptPet"
-            android:exported="false" />
-        <activity
-            android:name=".HowtoHelp"
-            android:exported="false" />
-        <activity
             android:name=".AdminHomepage"
             android:exported="false" />
         <activity
@@ -67,10 +61,20 @@
             android:name=".PetDetails"
             android:exported="false" />
         <activity
+            android:name=".AdoptPet"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUs"
+            android:exported="false" />
+        <activity
+            android:name=".HowtoHelp"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
