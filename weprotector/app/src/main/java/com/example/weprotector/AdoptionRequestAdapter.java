@@ -37,7 +37,6 @@ public class AdoptionRequestAdapter extends RecyclerView.Adapter<AdoptionRequest
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AdoptionRequest request = requestList.get(position);
 
-        // Bind data
         holder.tvPetName.setText("Pet: " + request.petName);
         holder.tvBreed.setText("Breed: " + request.breed);
         holder.tvAge.setText("Age: " + request.age);
@@ -46,14 +45,12 @@ public class AdoptionRequestAdapter extends RecyclerView.Adapter<AdoptionRequest
         holder.tvAdopterEmail.setText("Email: " + request.adopterEmail);
         holder.tvStatus.setText("Status: " + request.status);
 
-        // Accept button listener
         holder.btnAccept.setOnClickListener(v -> {
             DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("adoptionRequests");
             dbRef.child(request.requestId).child("status").setValue("accepted")
                     .addOnSuccessListener(aVoid -> Toast.makeText(context, "Request Accepted", Toast.LENGTH_SHORT).show());
         });
 
-        // Reject button listener
         holder.btnReject.setOnClickListener(v -> {
             DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("adoptionRequests");
             dbRef.child(request.requestId).child("status").setValue("rejected")

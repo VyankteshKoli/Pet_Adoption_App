@@ -65,7 +65,6 @@ public class LoginPage extends AppCompatActivity {
             }
         });
 
-        // Signup button
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,12 +141,12 @@ public class LoginPage extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = authProfile.getCurrentUser();
         if (user != null) {
-            // If the user is already logged in, redirect to HomePage
+            
             if (user.isEmailVerified()) {
                 startActivity(new Intent(LoginPage.this, HomePage.class));
                 finish();
             } else {
-                // If email is not verified, prompt for verification
+                
                 user.sendEmailVerification();
                 authProfile.signOut();
                 showAlertDialog();

@@ -101,7 +101,7 @@ public class Paybill extends AppCompatActivity {
                     requestData.put("adopterInfo", adopterInfo);
                     requestData.put("petInfo", petInfo);
                     requestData.put("status", "pending");
-                    requestData.put("adminId", adminId);  // <-- now safe, coming from intent
+                    requestData.put("adminId", adminId);  
                     requestData.put("timestamp", System.currentTimeMillis());
 
                     if (requestId != null) {
